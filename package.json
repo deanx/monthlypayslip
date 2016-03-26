@@ -1,0 +1,26 @@
+{
+  "name": "montlypayslip",
+  "version": "1.0.0",
+  "description": "Montly Payslip problem resolution",
+  "main": "app.js",
+  "scripts": {
+    "test": "_mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deanx/montlypayslip.git"
+  },
+  "keywords": [
+    "montly",
+    "payslip"
+  ],
+  "author": "Alex Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deanx/montlypayslip/issues"
+  },
+  "homepage": "https://github.com/deanx/montlypayslip#readme",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
+}
