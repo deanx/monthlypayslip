@@ -23,4 +23,30 @@ describe('MontlyPaySlip Service', function() {
     });
   });
 
+
+  describe('When I calculated income tax', function() {
+    it('should return 0 for the lower lane', function() {
+      assert.equal(0, util.calculateIncomeTax(12));
+    });
+
+    it('should return correctly for a normal lane', function() {
+      assert.equal(922, util.calculateIncomeTax(60050));
+    });
+
+    it('should return correctly for a almost high lane', function() {
+      assert.equal(2696, util.calculateIncomeTax(120000));
+    });
+  });
+
+  describe('When I calculated net income', function() {
+    it('should return a correct rounded value', function() {
+      assert.equal(4082, util.calculateNetIncome(5004,922));
+    });
+  });
+
+  describe('When I calculated super', function() {
+    it('should return the correct rounded value', function() {
+      assert.equal(450, util.calculateSuper(5004, 9));
+    })
+  });
 });
