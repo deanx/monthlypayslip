@@ -27,7 +27,7 @@ describe('App', function() {
 
   describe('Run with non-existent file', function() {
     before(function(done) {
-      var commandLine = 'node ' + appRelativePath + appIndexFile + '--file=./test/non-existent-test.csv';
+      var commandLine = 'node ' + appRelativePath + appIndexFile + ' --file ./test/non-existent-test.csv';
       exec.exec(commandLine, function(err, stdout, stderr) {
         commandReturnParseWithNullReturn(err, stdout, stderr, done);
       });
@@ -46,7 +46,8 @@ describe('App', function() {
         // file still do not exists. No problem!
       }
 
-      var commandLine = 'node ' + appRelativePath + appIndexFile + '--file=./test/empty-file.csv';
+      var commandLine = 'node ' + appRelativePath + appIndexFile + ' -f ./test/empty-file.csv';
+      console.log(commandLine);
       exec.exec(commandLine, function(err, stdout, stderr) {
         commandReturnParseWithNullReturn(err, stdout, stderr, done);
       });
@@ -58,7 +59,7 @@ describe('App', function() {
 
   describe('Run with existent file but wrong input in the second line', function() {
     before(function (done) {
-    var commandLine = 'node ' + appRelativePath + appIndexFile + '--file=./test/wrong-input-2-line.csv';
+    var commandLine = 'node ' + appRelativePath + appIndexFile + ' --file ./test/wrong-input-2-line.csv';
       exec.exec(commandLine, function(err, stdout, stderr) {
         var reader = new lineByLineReader(outputFile);
         var lines = [];
