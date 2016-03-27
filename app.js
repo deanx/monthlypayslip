@@ -8,6 +8,7 @@ program.version('1.0.0')
 
 util.validateInputData(program);
 
+
 fs.writeFile('output.csv', '', function(err) {
 
 });

@@ -62,7 +62,7 @@ describe('App', function() {
     var commandLine = 'node ' + appRelativePath + appIndexFile + ' --file ./test/wrong-input-2-line.csv';
       exec.exec(commandLine, function(err, stdout, stderr) {
         var reader = new lineByLineReader(outputFile);
-        var lines = [];
+        lines = [];
         reader.on('line', function(line) {
           lines.push(line);
         });
