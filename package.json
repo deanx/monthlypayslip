@@ -23,6 +23,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "exec": "^0.2.1",
+    "line-by-line": "^0.1.4",
     "mocha": "^2.4.5"
   },
   "dependencies": {
