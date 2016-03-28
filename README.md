@@ -19,4 +19,4 @@ node app.js -f [CSV_INPUT_FILE]
 
 ## Assumptions
 - CSV (input and output) has no header
-- Tax on the exercise description was used
+- Inputs / responses from the exercise has been used as testing scenario
