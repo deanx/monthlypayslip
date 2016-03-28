@@ -10,6 +10,7 @@ npm test
 ## Running project
 - node app.js -f [CSV_INPUT_FILE]
 - it will generate output.csv file
+
 ## Technologies
 - NodeJS
 - Lo-Dash
