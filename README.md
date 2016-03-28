@@ -1,7 +1,8 @@
 # monthlypayslip
 
 ## Before run or test project
-cd <project directory>
+cd [project directory]
+
 npm install
 
 ## Running only unit tests
