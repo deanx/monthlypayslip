@@ -1,6 +1,8 @@
 var program = require('commander');
 var fs = require('fs');
 var util = require('./util.js');
+var service = require('./monthlyPaySlipService.js');
+var csv = require('./csv.js');
 
 program.version('1.0.0')
  .option('-f --file [file]', 'CSV file')
@@ -8,7 +10,7 @@ program.version('1.0.0')
 
 util.validateInputData(program);
 
-
-fs.writeFile('output.csv', '', function(err) {
-
-});
+var lines = csv.parse(program.file,',');
+response = service.parseLinesToResponse(lines);
+csv.generateOutput(response, './output.csv');
+console.info('file generated with success');
