@@ -11,7 +11,7 @@ var parse = function(fileName, separator) {
   var lineReader = new LineReader(fileName);
 
   var objectInGenerator = function(columns) {
-    if(_.isEqual(_.size(columns),numberOfColumnsInFile)) {
+    if(_.isEqual(numberOfColumnsInFile, _.size(columns))) {
       return {'firstName': columns[0], 'lastName': columns[1],
         'annualSalary': columns[2], 'superRate': columns[3],
         'paymentStartDate': columns[4]};
@@ -33,7 +33,7 @@ var generateOutput = function(collection, outputFile) {
   };
 
   _.forEach(collection, function(value) {
-    if(! _.isEqual(value, wrongDataValue)) {
+    if(! _.isEqual(wrongDataValue, value)) {
       lines.push(_.join(_.values(value),','));
     } else {
       lines.push(value);

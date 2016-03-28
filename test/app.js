@@ -87,7 +87,6 @@ describe('App', function() {
   });
 
   describe('Run with existent file but wrong input for the second line', function() {
-
     before(function (done) {
       lines = getFileLines('./test/wrong-input-2-line.csv',done);
     });
@@ -97,6 +96,20 @@ describe('App', function() {
     });
     it('Should verify that the first line of generated file has the correct name', function() {
       assert.equal('David Rudd,01 March – 31 March,5004,922,4082,450', lines[0]);
+    });
+  });
+
+  describe('Run with existent file but wrong tax rate for the first line', function() {
+    before(function (done) {
+      lines = getFileLines('./test/wrong-input-superrate.csv',done);
+    });
+
+    it('Should verify that the first line of generated file has a error message', function() {
+      assert.equal(wrongLineReturn, lines[0]);
+    });
+
+    it('Should verify that the second line still has a correct return', function() {
+      assert.equal('David Rudd,01 March – 31 March,5004,922,4082,450', lines[1]);
     });
   });
 });

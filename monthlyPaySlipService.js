@@ -32,8 +32,20 @@ var calculateSuper = function(grossIncome, superRate) {
   return Math.round(superValue);
 };
 
+var isValidLine = function(line) {
+
+  return !(
+    _.isNil(line) ||
+    _.isNil(line.firstName) ||
+    _.isNil(line.lastName) ||
+    (!_.isNumber(line.annualSalary) && line.annualSalary <= 0) ||
+    parseInt(line.superRate) <= 0 ||
+    _.isNil(line.paymentStartDate)
+  );
+};
 var convertInObjToOutObj = function(inObject) {
-  if(_.isEqual(null, inObject)) return wrongDataValue;
+  if(!isValidLine(inObject)) return wrongDataValue;
+
   var name = inObject.firstName + ' ' + inObject.lastName;
   var payPeriod = inObject.paymentStartDate;
   var grossIncome = calculateGross(inObject.annualSalary);
