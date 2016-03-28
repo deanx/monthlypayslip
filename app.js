@@ -1,8 +1,8 @@
 var program = require('commander');
 var fs = require('fs');
-var util = require('./util.js');
-var service = require('./monthlyPaySlipService.js');
-var csv = require('./csv.js');
+var util = require('./source/util.js');
+var service = require('./source/monthlyPaySlipService.js');
+var csv = require('./source/csv.js');
 
 program.version('1.0.0')
  .option('-f --file [file]', 'CSV file')

@@ -38,6 +38,7 @@ var generateOutput = function(collection, outputFile) {
       lines.push(value);
     }
   });
+  
   writeToFile(outputFile, _.join(lines,require('os').EOL));
 };
 

@@ -1,7 +1,7 @@
 var assert = require('chai').assert;
 
 describe('MonthlyPaySlip Service', function() {
-  var service = require('./../monthlyPaySlipService.js');
+  var service = require('./../source/monthlyPaySlipService.js');
   describe('When I have a gross with float point', function() {
     before(function(done) {
       //gross calculations are splitted by 12.
