@@ -41,7 +41,6 @@ var calculateSuper = function(grossIncome, superRate) {
 };
 
 var isValidLine = function(line) {
-
   return !(
     _.isNil(line) ||
     _.isNil(line.firstName) ||
@@ -51,6 +50,7 @@ var isValidLine = function(line) {
     _.isNil(line.paymentStartDate)
   );
 };
+
 var convertInObjToOutObj = function(inObject) {
   if(!isValidLine(inObject)) return wrongDataValue;
 
