@@ -1,6 +1,5 @@
 var fs = require('fs');
 var _ = require('lodash');
-
 var LineReader = require('n-readlines');
 
 GLOBAL.wrongDataValue = 'Wrong data';

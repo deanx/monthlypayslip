@@ -11,6 +11,9 @@ program.version('1.0.0')
 util.validateInputData(program);
 
 var lines = csv.parse(program.file,',');
-response = service.parseLinesToResponse(lines);
+
+response = service.parseLines(lines);
+
 csv.generateOutput(response, './output.csv');
+
 console.info('file generated with success');

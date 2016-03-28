@@ -1,8 +1,16 @@
 var _ = require('lodash');
-var numberOfMonths = 12; //number of Months in the year. Factor to use in some operations
-var oneCent = 0.01; //needed to round some calculus
 var csv = require('./csv.js');
 
+var numberOfMonths = 12; //number of Months in the year. Factor to use in some operations
+var oneCent = 0.01; //needed to round some calculus
+
+/*
+0 - $18,200     Nil
+$18,201 - $37,000       19c for each $1 over $18,200
+$37,001 - $80,000       $3,572 plus 32.5c for each $1 over $37,000
+$80,001 - $180,000      $17,547 plus 37c for each $1 over $80,000
+$180,001 and over       $54,547 plus 45c for each $1 over $180,000
+*/
 var taxTable = [
   {minimumSalary:0, maximumSalary:18200, taxRate: 0, fixedTax: 0},
   {minimumSalary:18201, maximumSalary:37000, taxRate: 0.19, fixedTax: 0},
@@ -64,10 +72,12 @@ var parseLinesToResponse = function(lines) { // sugar to avoid foreach in interf
   });
   return returnLines;
 };
+
+// Calculus functions exposed for testing. But it could be reused in a normal case too.
 module.exports = {
   calculateGross: calculateGross,
   calculateIncomeTax: calculateIncomeTax,
   calculateNetIncome: calculateNetIncome,
   calculateSuper: calculateSuper,
-  parseLinesToResponse: parseLinesToResponse
+  parseLines: parseLinesToResponse
 };

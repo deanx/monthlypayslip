@@ -1,4 +1,5 @@
 var assert = require('chai').assert;
+
 describe('MonthlyPaySlip Service', function() {
   var service = require('./../monthlyPaySlipService.js');
   describe('When I have a gross with float point', function() {
